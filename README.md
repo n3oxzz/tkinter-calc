@@ -1,3 +1,3 @@
 # Calculator
 ## tkinter Calculator
-### This calculator will have most needed functions for calculator
+### This is a simple calculator using tkinter

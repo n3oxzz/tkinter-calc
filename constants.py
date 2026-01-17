@@ -7,4 +7,3 @@ X_AXIS_OFFSET = 15
 Y_AXIS_OFFSET = 0
 DISTANCE_BETWEEN_BUTTONS = 48
 FONT_SIZE = 17
-image_file_path = "/Users/pavtim127/Desktop/MyCalculatorNotJava228/symbols/"

@@ -1,5 +1,7 @@
 import tkinter as tk
 import re
+import os
+from dotenv import load_dotenv
 from constants import *
 
 window = tk.Tk()
@@ -8,6 +10,9 @@ window.title('Calculator')
 window.geometry(str(WINDOW_MAX_WIDTH) + "x" + str(WINDOW_MAX_HEIGHT))
 window.resizable(0, 0)
 ALLOWED_IN_BUFFER_REGEX_PATTERN = re.compile(r'[\d\-\+\*/]')
+
+load_dotenv()
+image_file_path = os.getenv("IMAGE_FILE_PATH")
 
 mtrx_of_symb = [['one_resized.png', 'two_resized.png', 'three_resized.png', 'plus_sign.png'],
                 ['four_resized.png', 'five_resized.png', 'six_resized.png', 'minus_sign.png'],
