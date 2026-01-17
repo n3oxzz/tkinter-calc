@@ -17,7 +17,7 @@ image_file_path = os.getenv("IMAGE_FILE_PATH")
 mtrx_of_symb = [['one_resized.png', 'two_resized.png', 'three_resized.png', 'plus_sign.png'],
                 ['four_resized.png', 'five_resized.png', 'six_resized.png', 'minus_sign.png'],
                 ['seven_resized.png', 'eight_resized.png', 'nine_resized.png', 'multiplication_sign.png'],
-                ['AC_.png', 'zero_resized.png', 'equal_sign.png', 'devision_sign.png'],
+                ['AC_.png', 'zero_resized.png', 'equal_sign.png', 'division_sign.png'],
                 ["nothing_.png", "nothing_.png", "nothing_.png", "nothing_.png"]]
 
 # def create_matrix(matrix_rows, matrix_columns, map):
@@ -90,42 +90,28 @@ def create_button(symb_matrix):
             x_pos += DISTANCE_BETWEEN_BUTTONS + j
             btn.bind('<Button-1>', lambda event, button_sign_text=button_sign_text: update_entry(button_sign_text))
 
+BUTTON_MAP={
+    "one": "1",
+    "two": "2",
+    "three": "3",
+    "four": "4",
+    "five": "5",
+    "six": "6",
+    "seven": "7",
+    "eight": "8",
+    "nine": "9",
+    "zero": "0",
+    "plus": "+",
+    "minus": "-",
+    "multiplication": "*",
+    "division": "/",
+    "equal": "=",
+    "nothing": "",
+    "AC": "AC",
+}
+
 def getButtonSignText(signToMatch):
-    match(signToMatch):
-        case "one":
-            return "1"
-        case "two":
-            return "2"
-        case "three":
-            return "3"
-        case "four":
-            return "4"
-        case "five":
-            return "5"
-        case "six":
-            return "6"
-        case "seven":
-            return "7"
-        case "eight":
-            return "8"
-        case "nine":
-            return "9"
-        case "zero":
-            return "0"
-        case "plus":
-            return "+"
-        case "minus":
-            return "-"
-        case "multiplication":
-            return "*"
-        case "devision":
-            return "/"
-        case "equal":
-            return "="
-        case "nothing":
-            return ""
-        case "AC":
-            return "AC"
+    return BUTTON_MAP.get(signToMatch, "")
 
 
 create_button(mtrx_of_symb)
